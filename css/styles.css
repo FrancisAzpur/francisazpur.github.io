@@ -1,0 +1,96 @@
+/* Obsidian Scholar - Estilos base y utilidades estructurales */
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    background-color: #0b0f0d;
+    color: #e0e3df;
+    font-family: "Inter", system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    overscroll-behavior: none;
+  }
+
+  main > :first-child {
+    margin-top: 0 !important;
+  }
+
+  main > :last-child {
+    margin-bottom: 0 !important;
+  }
+}
+
+/* Barra de desplazamiento sutil */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0b0f0d;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #272b28;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3f4944;
+}
+
+/* Borde estructural y acento superior jade en tarjetas interactivas */
+.scholar-card {
+  border: 1px solid rgba(63, 73, 68, 0.45);
+  border-top: 2px solid transparent;
+  transition: background-color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.scholar-card:hover {
+  border-color: rgba(137, 147, 141, 0.45);
+  border-top-color: #8fd5b5;
+}
+
+/* Anillo de foco accesible sin desenfoque difuso */
+a:focus-visible,
+button:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 1px #8fd5b5, inset 0 1px 0 0 rgba(143, 213, 181, 0.25);
+}
+
+/* Estado activo para navegación */
+.nav-link.is-active {
+  color: #8fd5b5;
+  border-bottom: 2px solid #8fd5b5;
+}
+
+.mobile-nav-link.is-active {
+  color: #8fd5b5;
+  background-color: rgba(143, 213, 181, 0.08);
+  border-left: 2px solid #8fd5b5;
+}
+
+/* Estado activo para filtros de proyectos */
+.filter-btn.is-active {
+  background-color: #186249;
+  color: #aaf1d1;
+  border-color: #8fd5b5;
+}
+
+.project-card.is-hidden {
+  display: none;
+}
+
+/* Reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-ping,
+  .animate-pulse {
+    animation: none;
+  }
+}
